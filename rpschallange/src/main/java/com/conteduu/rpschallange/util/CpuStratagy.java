@@ -53,7 +53,6 @@ public class CpuStratagy {
         if (historic.size() < window) {
             historic.add(jogadaAtual);
             qntdJogadas.put(jogadaAtual, qntdJogadas.getOrDefault(jogadaAtual, 0) + 1);
-            System.out.println(qntdJogadas);
             return Move.random();
         }
 
@@ -69,12 +68,9 @@ public class CpuStratagy {
             }
         }
 
-        System.out.println(maisVezesApareceu + " " + qntdDeterminadaJogadaApareceu);
-
         switch (maisVezesApareceu){
             case PEDRA -> {
                 removeFirstAddFinal(jogadaAtual);
-
                 return Move.PAPEL;
             }
             case PAPEL -> {
@@ -99,8 +95,6 @@ public class CpuStratagy {
         qntdJogadas.put(jogadaAtual, qntdJogadas.getOrDefault(jogadaAtual, 0) + 1);
         maisVezesApareceu = null;
         qntdDeterminadaJogadaApareceu = 0;
-        System.out.println(qntdJogadas);
-        System.out.println(qntdJogadas);
     }
 
     public void resetStrategy(){

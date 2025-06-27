@@ -103,10 +103,9 @@ public class MainApp extends Application {
 
         );
 
-        playerStats = new PlayerStats();
-
         // -------- EVENTS -------- \\
 
+        playerStats = new PlayerStats();
         btnPlay.setOnAction(e -> playRound(comboBoxHeader.getValue()));
         btnReset.setOnAction(e -> resetGame());
 
