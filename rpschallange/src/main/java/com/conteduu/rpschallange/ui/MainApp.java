@@ -163,7 +163,6 @@ public class MainApp extends Application {
             scoreDao.save(score);
             history.addAll(scoreDao.list());
         }
-
     }
 
     private void resetGame(){

@@ -34,6 +34,9 @@ public class CpuStratagy {
             put(Move.TESOURA, 0);
     }};
 
+    Move maisVezesApareceu = null;
+    Integer qntdDeterminadaJogadaApareceu = 0;
+
     public Move proximaJogada(Move jogadaAtual, int window){
         /*
             Atualizar a Deque com a jogada mais recente
@@ -50,11 +53,12 @@ public class CpuStratagy {
         if (historic.size() < window) {
             historic.add(jogadaAtual);
             qntdJogadas.put(jogadaAtual, qntdJogadas.getOrDefault(jogadaAtual, 0) + 1);
+            System.out.println(qntdJogadas);
             return Move.random();
         }
 
-        Move maisVezesApareceu = null;
-        Integer qntdDeterminadaJogadaApareceu = 0;
+
+
         for (Move move: qntdJogadas.keySet()){
 
             Integer qntdJogada = qntdJogadas.get(move);
@@ -64,6 +68,8 @@ public class CpuStratagy {
                 maisVezesApareceu = move;
             }
         }
+
+        System.out.println(maisVezesApareceu + " " + qntdDeterminadaJogadaApareceu);
 
         switch (maisVezesApareceu){
             case PEDRA -> {
@@ -86,9 +92,15 @@ public class CpuStratagy {
     }
 
     private void removeFirstAddFinal(Move jogadaAtual){
+        Move primeiroLista = historic.getFirst();
         historic.removeFirst();
         historic.add(jogadaAtual);
-        qntdJogadas.put(jogadaAtual, qntdJogadas.getOrDefault(jogadaAtual, 0) - 1);
+        qntdJogadas.put(primeiroLista, qntdJogadas.getOrDefault(primeiroLista, 0) - 1);
+        qntdJogadas.put(jogadaAtual, qntdJogadas.getOrDefault(jogadaAtual, 0) + 1);
+        maisVezesApareceu = null;
+        qntdDeterminadaJogadaApareceu = 0;
+        System.out.println(qntdJogadas);
+        System.out.println(qntdJogadas);
     }
 
     public void resetStrategy(){

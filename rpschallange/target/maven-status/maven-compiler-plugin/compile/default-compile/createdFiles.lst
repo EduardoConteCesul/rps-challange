@@ -1,0 +1,9 @@
+com\conteduu\rpschallange\model\Score.class
+com\conteduu\rpschallange\util\MongoConfig.class
+com\conteduu\rpschallange\util\CpuStratagy$2.class
+com\conteduu\rpschallange\model\Move.class
+com\conteduu\rpschallange\model\PlayerStats.class
+com\conteduu\rpschallange\dao\ScoreDao.class
+com\conteduu\rpschallange\ui\MainApp.class
+com\conteduu\rpschallange\util\CpuStratagy$1.class
+com\conteduu\rpschallange\util\CpuStratagy.class

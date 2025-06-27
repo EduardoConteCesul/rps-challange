@@ -34,7 +34,7 @@ public class PlayerStats {
 
     @Override
     public String toString(){
-        return "V: " + wins + "E: " + draws + "D: " + losses;
+        return "V: " + wins + " E: " + draws + " D: " + losses;
     }
 
     public int getWins() {
